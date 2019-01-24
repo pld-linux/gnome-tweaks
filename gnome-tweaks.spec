@@ -1,13 +1,13 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
-Name:		gnome-tweak-tool
-Version:	3.26.4
-Release:	2
+Name:		gnome-tweaks
+Version:	3.30.2
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.26/%{name}-%{version}.tar.xz
-# Source0-md5:	2018fc13a1e61fbaff3ee53b4968d7eb
-URL:		http://live.gnome.org/GnomeTweakTool
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tweaks/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	5c4f9181cf18ce229f63d84723943721
+URL:		https://wiki.gnome.org/action/show/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.24
@@ -42,7 +42,7 @@ Narzędzie do dostosowywania zaawansowanych opcji GNOME 3.
 %prep
 %setup -q
 
-%{__sed} -i -e '1s,/usr/bin/env python,/usr/bin/python,' gnome-tweak-tool gnome-tweak-tool-lid-inhibitor
+%{__sed} -i -e '1s,/usr/bin/env python,/usr/bin/python,' gnome-tweaks gnome-tweak-tool-lid-inhibitor
 
 %build
 %meson build
@@ -66,12 +66,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README
-%attr(755,root,root) %{_bindir}/gnome-tweak-tool
+%doc AUTHORS NEWS
+%attr(755,root,root) %{_bindir}/gnome-tweaks
 %attr(755,root,root) %{_libexecdir}/gnome-tweak-tool-lid-inhibitor
 %{py3_sitedir}/gtweak
-%{_datadir}/gnome-tweak-tool
-%{_datadir}/metainfo/gnome-tweak-tool.appdata.xml
-%{_desktopdir}/gnome-tweak-tool.desktop
-%{_iconsdir}/hicolor/*x*/apps/gnome-tweak-tool.png
-%{_iconsdir}/hicolor/scalable/apps/gnome-tweak-tool-symbolic.svg
+%{_datadir}/gnome-tweaks
+%{_datadir}/metainfo/org.gnome.tweaks.appdata.xml
+%{_desktopdir}/org.gnome.tweaks.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.tweaks.png
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.tweaks-symbolic.svg
