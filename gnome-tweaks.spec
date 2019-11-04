@@ -1,12 +1,12 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	3.30.2
+Version:	3.34.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tweaks/3.30/%{name}-%{version}.tar.xz
-# Source0-md5:	5c4f9181cf18ce229f63d84723943721
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tweaks/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	a625d8b167c5549c68e1c6ac7a87d369
 URL:		https://wiki.gnome.org/action/show/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 2.0
@@ -31,6 +31,7 @@ Requires:	libnotify >= 0.7
 Requires:	libsoup >= 2.4
 Requires:	python-pygobject3 >= 3.10
 Requires:	python3 >= 1:3.0
+Obsoletes:	gnome-tweak-tool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -73,5 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-tweaks
 %{_datadir}/metainfo/org.gnome.tweaks.appdata.xml
 %{_desktopdir}/org.gnome.tweaks.desktop
-%{_iconsdir}/hicolor/*x*/apps/org.gnome.tweaks.png
-%{_iconsdir}/hicolor/scalable/apps/org.gnome.tweaks-symbolic.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.tweaks.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.tweaks-symbolic.svg
