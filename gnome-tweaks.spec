@@ -1,12 +1,12 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	3.34.0
-Release:	2
+Version:	3.34.1
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-tweaks/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	a625d8b167c5549c68e1c6ac7a87d369
+Source0:	https://download.gnome.org/sources/gnome-tweaks/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	34136ab30594546889d7c32ed8b13aba
 URL:		https://wiki.gnome.org/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	glib2-devel >= 1:2.58
