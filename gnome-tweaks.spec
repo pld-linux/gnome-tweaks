@@ -38,6 +38,7 @@ Requires:	python-pygobject3 >= 3.10
 Requires:	python3 >= 1:3.0
 Requires:	sound-theme-freedesktop
 Obsoletes:	gnome-tweak-tool
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,8 +59,11 @@ Narzędzie do dostosowywania zaawansowanych opcji GNOME 3.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}
 
 %ninja_install -C build
+
+%{__mv} $RPM_BUILD_ROOT{%{py3_sitedir},%{py3_sitescriptdir}}/gtweak
 
 %find_lang %{name}
 
@@ -77,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_bindir}/gnome-tweaks
 %attr(755,root,root) %{_libexecdir}/gnome-tweak-tool-lid-inhibitor
-%{py3_sitedir}/gtweak
+%{py3_sitescriptdir}/gtweak
 %{_datadir}/gnome-tweaks
 %{_datadir}/metainfo/org.gnome.tweaks.appdata.xml
 %{_desktopdir}/org.gnome.tweaks.desktop
