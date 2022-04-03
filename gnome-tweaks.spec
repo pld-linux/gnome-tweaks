@@ -63,8 +63,6 @@ install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}
 
 %ninja_install -C build
 
-%{__mv} $RPM_BUILD_ROOT{%{py3_sitedir},%{py3_sitescriptdir}}/gtweak
-
 %find_lang %{name}
 
 %clean
