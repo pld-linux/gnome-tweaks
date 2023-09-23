@@ -1,15 +1,16 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	40.10
-Release:	3
+Version:	42.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tweaks/40/%{name}-%{version}.tar.xz
-# Source0-md5:	ebfa262010021d812a8daae218cda576
+Source0:	https://download.gnome.org/sources/gnome-tweaks/42/%{name}-%{version}.tar.xz
+# Source0-md5:	f8b02440110c0f82aa0d8e0ba0a2bb14
 URL:		https://wiki.gnome.org/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	meson >= 0.46.0
+BuildRequires:	libhandy1-devel >= 1.5
+BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.0
@@ -27,9 +28,8 @@ Requires:	gobject-introspection
 Requires:	gsettings-desktop-schemas >= 3.34
 Requires:	gtk+3 >= 3.12.0
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 1.0
+Requires:	libhandy1 >= 1.5
 Requires:	libnotify >= 0.7
-Requires:	libsoup >= 2.4
 Requires:	mutter
 # Pango-1.0.typelib
 Requires:	pango >= 1:1.26
@@ -62,6 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}
 
 %ninja_install -C build
+
+# not supported by glibc (as of 2.38)
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{name}
 
