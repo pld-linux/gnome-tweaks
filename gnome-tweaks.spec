@@ -1,12 +1,12 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	42.0
+Version:	45.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tweaks/42/%{name}-%{version}.tar.xz
-# Source0-md5:	f8b02440110c0f82aa0d8e0ba0a2bb14
+Source0:	https://download.gnome.org/sources/gnome-tweaks/45/%{name}-%{version}.tar.xz
+# Source0-md5:	38129965f3f1e21c614dd132ad9bdfea
 URL:		https://wiki.gnome.org/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	libhandy1-devel >= 1.5
@@ -50,7 +50,7 @@ Narzędzie do dostosowywania zaawansowanych opcji GNOME 3.
 %prep
 %setup -q
 
-%{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' gnome-tweaks gnome-tweak-tool-lid-inhibitor
+%{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' gnome-tweaks
 
 %build
 %meson build
@@ -83,7 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_bindir}/gnome-tweaks
-%attr(755,root,root) %{_libexecdir}/gnome-tweak-tool-lid-inhibitor
 %{py3_sitescriptdir}/gtweak
 %{_datadir}/glib-2.0/schemas/org.gnome.tweaks.gschema.xml
 %{_datadir}/gnome-tweaks
