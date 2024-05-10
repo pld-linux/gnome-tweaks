@@ -1,40 +1,41 @@
+# TODO: switch to gtk4-update-icon-cache
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	45.1
+Version:	46.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-tweaks/45/%{name}-%{version}.tar.xz
-# Source0-md5:	1d0ed89646c12a951857a66c1ae3f5b0
+Source0:	https://download.gnome.org/sources/gnome-tweaks/46/%{name}-%{version}.tar.xz
+# Source0-md5:	3556cd4f3b201ec4d5c1be9611483b15
 URL:		https://wiki.gnome.org/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	libhandy1-devel >= 1.5
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	python3 >= 1:3.0
+BuildRequires:	python3 >= 1:3.10
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.58
+Requires(post,postun):	glib2 >= 1:2.78.0
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	glib2 >= 1:2.58
+Requires:	glib2 >= 1:2.78.0
 Requires:	gnome-desktop >= 3.30
 Requires:	gnome-settings-daemon
 Requires:	gnome-shell >= 3.24
-Requires:	gobject-introspection
-Requires:	gsettings-desktop-schemas >= 3.34
-Requires:	gtk+3 >= 3.12.0
+Requires:	gobject-introspection >= 1.78.0
+Requires:	gsettings-desktop-schemas >= 46.0
+Requires:	gtk4 >= 4.10.0
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 1.5
+Requires:	libadwaita >= 1.4.0
+Requires:	libgudev >= 238
 Requires:	libnotify >= 0.7
 Requires:	mutter
 # Pango-1.0.typelib
 Requires:	pango >= 1:1.26
-Requires:	python-pygobject3 >= 3.10
-Requires:	python3 >= 1:3.0
+Requires:	python3-pygobject3 >= 3.46.0
+Requires:	python3 >= 1:3.10
 Requires:	sound-theme-freedesktop
 Suggests:	nautilus >= 3.26
 Obsoletes:	gnome-tweak-tool < 3.27
