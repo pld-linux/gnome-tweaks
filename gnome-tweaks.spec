@@ -2,12 +2,12 @@
 Summary:	A tool to customize advanced GNOME 3 options
 Summary(pl.UTF-8):	Narzędzie do dostosowywania zaawansowanych opcji GNOME 3
 Name:		gnome-tweaks
-Version:	46.0
+Version:	46.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-tweaks/46/%{name}-%{version}.tar.xz
-# Source0-md5:	3556cd4f3b201ec4d5c1be9611483b15
+# Source0-md5:	1c770b4db46b037338e0501a6c5cc813
 URL:		https://wiki.gnome.org/Apps/Tweaks
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	meson >= 0.59.0
