@@ -14,7 +14,7 @@ BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.10
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -54,15 +54,15 @@ Narzędzie do dostosowywania zaawansowanych opcji GNOME 3.
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' gnome-tweaks
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}
 
-%ninja_install -C build
+%meson_install
 
 # not supported by glibc (as of 2.38)
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
